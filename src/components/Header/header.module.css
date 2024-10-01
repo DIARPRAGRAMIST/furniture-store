@@ -1,0 +1,113 @@
+/* header.module.css */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.logo {
+    font-weight: 600;
+    font-size: 24px;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav li {
+    font-size: 18px;
+    color: #555;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.nav li:hover {
+    color: #007bff;
+}
+
+.presentation {
+    position: relative; /* Устанавливаем родителя для абсолютного позиционирования */
+    margin: 50px 0;
+    margin-left: -2.5%;
+    width: 95%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    padding-left: 50px;
+}
+
+.presentation img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.textOverlay {
+    position: absolute;
+    top: 50%; /* Вертикальное центрирование */
+    left: 50%; /* Горизонтальное центрирование */
+    transform: translate(-50%, -50%); /* Сдвиг для точного центрирования */
+    color: rgb(210, 160, 23);
+    text-align: center;
+}
+
+.textOverlay h1 {
+    font-size: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.shopCartButton {
+    cursor: pointer;
+    color: #555; /* Цвет по умолчанию */
+    transition: color, transform 0.3s ease;
+    margin-left: 55%;
+
+}
+
+.shopCartButton.active {
+    color: #dc3d3d; /* Цвет при активном состоянии (когда корзина открыта) */
+    transform: scale(1.5);
+}
+
+/* Стили для контейнера корзины */
+.shopCar {
+    position: absolute;
+    top: 50px; /* Положение под иконкой корзины */
+    right: 0;
+    width: 300px;
+    min-height: 150px;
+    background-color: #f1f1f1;
+    color: #333;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    z-index: 1000;
+    overflow-y: auto; /* Если много товаров, добавляем прокрутку */
+    max-height: 400px; /* Максимальная высота для корзины */
+}
+
+@media (max-width: 768px) {
+    .shopCar {
+        width: 100%;
+        right: 0;
+        left: 0;
+        top: 60px;
+        max-height: 300px;
+    }
+}

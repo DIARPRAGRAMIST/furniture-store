@@ -1,0 +1,98 @@
+main {
+    display: flex;
+    flex-wrap: wrap; /* Позволяет карточкам переноситься на новую строку */
+    gap: 20px; /* Расстояние между карточками */
+    justify-content: space-between; /* Равномерное распределение карточек */
+    padding: 20px;
+  }
+  
+  .item {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: calc(33.333% - 20px); /* 3 карточки в ряд с учетом отступов */
+    padding: 15px;
+    text-align: center;
+    transition: transform 500ms ease;
+    box-sizing: border-box; /* Учитывает отступы и границы в расчете ширины */
+  }
+  
+  .item:hover {
+    transform: scale(1.05); /* Эффект при наведении */
+  }
+  
+  .fullItem img {
+    max-width: 100%; /* Ограничивает ширину изображений в модальном окне */
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Центрирует изображение */
+  }
+  
+  
+  .item h2 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+  }
+  
+  .item p {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  .item b {
+    font-size: 1.2rem;
+    color:    #2c885b;
+  }
+  
+    h2, p {
+    margin: 10px 20px;
+    color: #333;
+  }
+  
+  b {
+        color: #5fa35f;
+  }
+
+  .addToCard {
+    background: #ca5252;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+  .addToCard:hover {
+    transform: scale(1.2) translateY(-5px);
+    transition: transform 500ms ease;
+
+  }
+
+  img {
+    cursor: pointer;
+  }
+
+  .fullItem {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    background: #100f0fbb;
+    overflow: auto;
+  }
+
+  .fullItem > div {
+    width: 600px;
+    position: relative;
+    margin: 10% auto;
+    padding: 40px 30px;
+    background: #fff;
+    border-radius: 9px;
+  }
+
